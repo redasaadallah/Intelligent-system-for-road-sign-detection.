@@ -1,0 +1,44 @@
+<Splash>
+    name:'splash'
+    md_bg_color:255/255,255/255,255/255,1
+    MDBoxLayout:
+        size_hint: 0.7, 0.3
+        radius:100
+        md_bg_color:1,1,1,1
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        
+        Image:
+            source:"logo/6.png"
+            size_hint:.9,1
+            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+    MDLinearProgressIndicator:
+        id: progress
+        type: "determinate"
+        size_hint: 0.8,0.007
+        value: 60
+        pos_hint: {'center_x': .5, 'center_y': .35}
+    MDBoxLayout:
+        md_bg_color: 255/255,100/255,150/255,1
+        size_hint: 0.3, 0.6,
+        pos_hint: {'center_x': 1,'center_y': 0}
+        radius:1000,0,0,0
+    MDBoxLayout:
+        md_bg_color: 0,255,0,1
+        size_hint: 0.3, 0.6,
+        pos_hint: {'center_x': 0,'center_y': 0}
+        radius:0,1000,0,0
+    MDBoxLayout:
+        md_bg_color: 0,0,255,1
+        size_hint: 0.3, 0.6,
+        pos_hint: {'center_x': 0,'center_y': 1}
+        radius:0,0,1000,0
+    MDBoxLayout:
+        md_bg_color: 255,0,0,1
+        size_hint: 0.3, 0.6,
+        pos_hint: {'center_x': 1,'center_y': 1}
+        radius:0,0,0,1000
+        
+        
+    
+
+        

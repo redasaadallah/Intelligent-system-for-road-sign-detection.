@@ -1,0 +1,214 @@
+<Respect>
+    name:"respect"
+    md_bg_color: 255,255,255,1
+    Image:
+        source: 'logo/cover6.jpg'  # Replace with your image path
+        allow_stretch: True
+        keep_ratio: False  # Set to False to cover the entire window
+    ScrollView:
+        size:self.size
+        do_scroll_x:True
+        do_scroll_y:True
+        BoxLayout:
+            orientation:"vertical"
+            id:pad
+            padding:(0,1300,0,-1000)
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            Screen:
+                id:con
+                size_hint_y:None
+                height:300
+                width:400
+                Image:
+                    source:"logo/8.png"
+                    size_hint:0.5,.5
+                    pos_hint: {'center_x': 0.25,'center_y': 4.8}
+                MDBoxLayout:
+                    size_hint: 0.00000000001,.4
+                    radius:100
+                    md_bg_color:255,153/255,53/255,1
+                    pos_hint: {'center_x': 0.43,'center_y': 4.8}
+                    canvas.after:
+                        Color:
+                            rgba: 255, 153/255, 51/255, 1
+                        Line:
+                            width: 3
+                            ellipse: self.x, self.y, self.width, self.height
+                MDLabel:
+                    text: "L'IA sur la Route,\n Sécurité Optimisée."
+                    halign:'center'
+                    pos_hint:{'center_x':0.7,'center_y':4.8}
+                    bold:True  
+                
+                Image:
+                    source:"roadsign/performance.png"
+                    size_hint:0.4,0.4
+                    pos_hint: {'center_x': 0.5,'center_y': 3.7}
+                
+                 
+                               
+                    
+                    
+                
+                
+                    
+                   
+    
+                    
+
+                            
+                MDLabel:
+                    id:NP
+                    text: "Aucun panneau détecté actuellement"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':3.3}
+                    theme_text_color: "Custom"
+                    text_color: "orange"
+                    font_style:'Title'
+                    role:'large'
+                    bold:True
+                Image:
+                    id:l1
+                    source:"logo/7.png"
+                    size_hint:.5,1
+                    pos_hint: {'center_x': 0.48,'center_y':3}
+                MDLabel:
+                    id:l2
+                    text: "Tous droits réservés 2025"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':2.87}
+                    theme_text_color: "Custom"
+                    text_color: "blue"
+                    font_style:'Label'
+                    role:'medium'
+    
+               
+
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: 1
+        pos_hint: {"center_x": .5, "center_y": 0.96}
+        
+        MDTopAppBarLeadingButtonContainer:
+            
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "arrow-left"
+                on_release:
+                    app.root.current="home"
+                    app.root.transition.direction ='right'
+                    #app.root.transition.duration=0
+                
+                
+        MDTopAppBarTitle:
+            text: " M. REDA SAADALLAH"
+            font_style:'Title'
+            role:'medium'
+            
+            
+        MDTopAppBarTrailingButtonContainer:
+            
+            
+            
+            
+            MDActionTopAppBarButton:
+                icon: "account-box-outline"
+                
+            MDActionTopAppBarButton:
+                
+                style:'filled'
+                icon: "menu"
+                on_release:nav_drawer.set_state('open')
+                
+    MDBoxLayout:
+                        
+        md_bg_color:255,102/255,178/255
+        size_hint:None,None
+        width:400
+        height:150
+        radius:50,0,50,0                 
+        padding:  
+        pos_hint: {'center_x': 0.5,'center_y': 0.55} 
+        MDScreen:
+           
+            
+                
+            MDLabel:
+                id:PR
+                halign:"center"
+                pos_hint: {'center_x': 0.5,'center_y': 0.75} 
+                text: "Panneaux respectés : 0"
+                theme_text_color: "Custom"
+                text_color: "white"
+                font_style:'Title'
+                role:"medium"
+                bold:True
+            MDLabel:
+                id:PNR
+                halign:"center"
+                text: "Panneaux non respectés : 0"
+                pos_hint:{'center_x':0.5,'center_y':0.55}
+                theme_text_color: "Custom"
+                text_color: "white"
+                font_style:'Title'
+                role:"medium"
+                bold:True
+            MDButton:
+                style: "filled"
+                pos_hint: {"center_x": .5, "center_y": .22}
+                on_release:app.misejour()
+                MDButtonText:
+                    text: "Mettre à jour"
+                    bold:True
+    MDNavigationDrawer:
+        id: nav_drawer
+        MDScreen:
+            size_hint:1,1
+            Image:
+                source: 'logo/cover1.jpeg'  # Replace with your image path
+                allow_stretch: True
+                keep_ratio: False  # Set to False to cover the entire window
+            
+            Image:
+                source:"logo/8.png"
+                size_hint:.5,.5
+                pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            MDButton:
+                style: "elevated"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release:
+                    app.deconnecter()
+                    nav_drawer.set_state('close')
+                MDButtonIcon:
+                    icon: "logout"
+                MDButtonText:
+                    text: "Déconnecter"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .19}
+                MDButtonIcon:
+                    icon: "google"
+                MDButtonText:
+                    text: "Google"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .12}
+                MDButtonIcon:
+                    icon: "facebook"
+                MDButtonText:
+                    text: "Facebook"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .05}
+                MDButtonIcon:
+                    icon: "instagram"
+                MDButtonText:
+                    text: "Instagram"
+                    bold:True
+
+                    

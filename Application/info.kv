@@ -1,0 +1,207 @@
+<Info>:
+    name:"info"
+    md_bg_color: 255,255,255,1
+    Image:
+        source: 'logo/cover6.jpg'  # Replace with your image path
+        allow_stretch: True
+        keep_ratio: False  # Set to False to cover the entire window
+    ScrollView:
+        size:self.size
+        do_scroll_x:True
+        do_scroll_y:True
+        BoxLayout:
+            orientation:"vertical"
+            padding:(0,1300,0,-600)
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            Screen:
+                size_hint_y:None
+                height:300
+                width:400
+                
+                Image:
+                    source:"logo/8.png"
+                    size_hint:0.5,.4
+                    pos_hint: {'center_x': 0.25,'center_y': 4.85}
+                MDBoxLayout:
+                    size_hint: 0.00000000001,.3
+                    radius:100
+                    md_bg_color:255,153/255,53/255,1
+                    pos_hint: {'center_x': 0.43,'center_y': 4.85}
+                    canvas.after:
+                        Color:
+                            rgba: 255, 153/255, 51/255, 1
+                        Line:
+                            width: 3
+                            ellipse: self.x, self.y, self.width, self.height
+                MDLabel:
+                    text: "L'IA sur la Route,\n Sécurité Optimisée."
+                    halign:'center'
+                    pos_hint:{'center_x':0.7,'center_y':4.85}
+                    bold:True  
+                Image:
+                    source:"logo/information.png"
+                    size_hint:0.2,1
+                    pos_hint: {'center_x': 0.5,'center_y': 4.5}  
+                MDLabel:
+                    text: "Vos information!"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':4.25}
+                    theme_text_color: "Custom"
+                    text_color: "orange"
+                    font_style:'Headline'
+                    role:"small"
+                    bold:True
+                MDBoxLayout:
+                    id:wq
+                    orientation:'vertical'
+                    md_bg_color: 0/255,255/255,0/255,1
+                    size_hint: 0.8,1.3 
+                    pos_hint: {'center_x': 0.5,'center_y': 3.5}
+                    radius:0,60,0,60 
+                    
+                    MDLabel:
+                        id:nom
+                        text:"Nom: SAADALLAH"
+                        halign:"center"
+                        bold:True
+                    MDLabel:
+                        id:prenom
+                        text:"Prenom: REDA"
+                        halign:"center"
+                        bold:True
+                    MDLabel:
+                        id:dn
+                        text: "CIN: BB203338"
+                        halign:"center"
+                        bold:True
+                    MDLabel:
+                        id:tel
+                        text:"Adresse: \nSIDI MOUMEN LAKDIM RUE 5 N 8"
+                        halign:"center"
+                        bold:True
+                    MDLabel:
+                        id:adr
+                        text:"Téléphone: 0625700603"
+                        halign:"center"
+                        bold:True
+                    MDLabel:
+                        id:ema
+                        text:'Email: \nredasaadallah77@gmail.com'
+                        halign:"center"
+                        bold:True
+             
+                MDButton:
+                    style: "elevated"
+                    pos_hint: {"center_x": .5, "center_y": 2.75}
+                    MDButtonIcon:
+                        icon: "account-edit"
+                    MDButtonText:
+                        text: "Modifier"
+                        bold:True
+                        
+
+                       
+                Image:
+                    source:"logo/7.png"
+                    size_hint:.5,1
+                    pos_hint: {'center_x': 0.5,'center_y':2.5}
+                MDLabel:
+                    text: "Tous droits réservés 2025"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':2.355}
+                    theme_text_color: "Custom"
+                    text_color: "blue"
+                    font_style:'Label'
+                    role:'medium'
+    
+               
+
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: 1
+        pos_hint: {"center_x": .5, "center_y": 0.96}
+        
+        MDTopAppBarLeadingButtonContainer:
+            md_bg_color:255,0,0
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "arrow-left"
+                on_release:
+                    app.root.current="home"
+                    app.root.transition.direction ='right'
+                    #app.root.transition.duration=0
+                
+                
+        MDTopAppBarTitle:
+            text: " M. REDA SAADALLAH"
+            font_style:'Title'
+            role:'medium'
+          
+            
+        MDTopAppBarTrailingButtonContainer:
+
+            
+            
+            
+            MDActionTopAppBarButton:
+                icon: "account-box-outline"
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "menu"
+                on_release:nav_drawer.set_state('open')
+                
+    
+            
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        MDScreen:
+            size_hint:1,1
+            Image:
+                source: 'logo/cover1.jpeg'  # Replace with your image path
+                allow_stretch: True
+                keep_ratio: False  # Set to False to cover the entire window
+            
+            Image:
+                source:"logo/8.png"
+                size_hint:.5,.5
+                pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            MDButton:
+                style: "elevated"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release:
+                    app.deconnecter()
+                    nav_drawer.set_state('close')
+                MDButtonIcon:
+                    icon: "logout"
+                MDButtonText:
+                    text: "Déconnecter"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .19}
+                MDButtonIcon:
+                    icon: "google"
+                MDButtonText:
+                    text: "Google"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .12}
+                MDButtonIcon:
+                    icon: "facebook"
+                MDButtonText:
+                    text: "Facebook"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .05}
+                MDButtonIcon:
+                    icon: "instagram"
+                MDButtonText:
+                    text: "Instagram"
+                    bold:True
+
+                    

@@ -1,0 +1,223 @@
+<Why>:
+    name:"why"
+    md_bg_color: 255,255,255,1
+    Image:
+        source: 'logo/cover6.jpg'  # Replace with your image path
+        allow_stretch: True
+        keep_ratio: False  # Set to False to cover the entire window
+    ScrollView:
+        size:self.size
+        do_scroll_x:True
+        do_scroll_y:True
+        BoxLayout:
+            orientation:"vertical"
+            padding:(0,1040,0,1500)
+            size_hint_y:None
+            
+            height:self.minimum_height
+            width:self.minimum_width
+            Screen:
+                size_hint_y:None
+                
+                height:300
+                width:400
+                Image:
+                    source:"logo/8.png"
+                    size_hint:0.5,0.5
+                    pos_hint: {'center_x': 0.25,'center_y': 3.9}
+                MDBoxLayout:
+                    size_hint: 0.00000000001,.3
+                    radius:100
+                    md_bg_color:255,153/255,53/255,1
+                    pos_hint: {'center_x': 0.43,'center_y': 3.9}
+                    canvas.after:
+                        Color:
+                            rgba: 255, 153/255, 51/255, 1
+                        Line:
+                            width: 3
+                            ellipse: self.x, self.y, self.width, self.height
+                MDLabel:
+                    text: "L'IA sur la Route,\n Sécurité Optimisée."
+                    halign:'center'
+                    pos_hint:{'center_x':0.7,'center_y':3.9}
+                    bold:True   
+                MDLabel:
+                    text: "[color=ff3333]Statistiques des accidents dus au non-respect des panneaux de signalisation au Maroc[/color]"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':3.4}
+                    bold:True 
+                    markup:True
+                    font_style:"Title"
+                    role:'large' 
+                    
+                Image:
+                    source:"logo/accidant.jpg"
+                    size_hint:0.8,1
+                    pos_hint: {'center_x': 0.5,'center_y': 2.8}
+                MDLabel:
+                    text: "Au Maroc, les accidents de la route causés par le non-respect des panneaux de signalisation représentent un problème majeur de sécurité routière. Selon les dernières données du Comité National de Prévention des Accidents de la Circulation (CNPAC), environ 30% des accidents mortels sont liés à ce type d'infraction.\n\nParmi les infractions les plus fréquentes, on retrouve le franchissement des feux rouges, impliqué dans 15% des accidents en milieu urbain, et le non-respect des stops et des cédez-le-passage, responsable de 12% des collisions aux intersections. L'excès de vitesse, malgré les limitations clairement signalées, reste la cause principale de 40% des accidents sur les autoroutes.\n\nEn 2023, le bilan routier a fait état de 3 500 décès, dont près d'un tiers attribuables au non-respect de la signalisation. On dénombre également 60 000 blessés, parmi lesquels 20% sont des cas graves.\n\nLes panneaux les moins respectés incluent les feux rouges, avec un taux de non-respect de 25%, les stops, où 30% des conducteurs ne marquent pas l'arrêt complet, et les limitations de vitesse, ignorées par 50% des usagers en zone urbaine. Les sens interdits sont également concernés, avec 20% des infractions entraînant des chocs frontaux.\n\nPlusieurs facteurs expliquent cette situation : un manque de sensibilisation des conducteurs, des contrôles routiers insuffisants et des infrastructures parfois défaillantes, avec des panneaux cachés ou endommagés."
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':1}
+                    font_style:'Label'
+                MDLabel:
+                    text: "[color=ff3333]Avantages du système automatique de détection des panneaux"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':-0.5}
+                    bold:True 
+                    markup:True
+                    font_style:"Title"
+                    role:'large' 
+                MDBoxLayout:
+                    md_bg_color:255/255,153/255,204/255
+                    pos_hint: {'center_x': 0.5,'center_y': -1.5}
+                    size_hint:0.9,1.7
+                    radius:30,0,30,0
+                    padding:10,0,10,0
+                    opacity:0.8
+                    MDScreen:
+                        
+                        MDLabel:
+                            text:"Pour les conducteurs"
+                            bold:True
+                            pos_hint: {'center_x': 0.5,'center_y': 0.85}
+                            halign:"center"
+                        MDLabel:
+                            text:"Ce système offre plusieurs bénéfices majeurs aux conducteurs. Tout d'abord, il améliore la sécurité routière en alertant en temps réel lorsque le véhicule approche d'un panneau (stop, limitation de vitesse, etc.), réduisant ainsi les risques d'accidents causés par une distraction ou une méconnaissance de la signalisation. Ensuite, il sert d'aide à la conduite, particulièrement utile dans les zones inconnues ou mal signalées, en guidant le conducteur et en l'aidant à respecter les règles sans stress. Enfin, ce système peut réduire les amendes en prévenant les infractions involontaires, comme le dépassement de vitesse ou le non-respect d'un feu rouge."
+                            
+                            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                            halign:"center"
+                            font_style:'Label'
+                MDBoxLayout:
+                    md_bg_color:153/255,255/255,153/255
+                    pos_hint: {'center_x': 0.5,'center_y': -3.4}
+                    size_hint:0.9,1.7
+                    radius:30,0,30,0
+                    padding:10,0,10,0
+                    opacity:0.8
+                    MDScreen:
+                        
+                        MDLabel:
+                            text:"Pour la société et les autorités"
+                            bold:True
+                            pos_hint: {'center_x': 0.5,'center_y': 0.85}
+                            halign:"center"
+                        MDLabel:
+                            text:"Au-delà des conducteurs, ce système présente des atouts pour la collectivité. Il contribue à fluidifier le trafic en encourageant le respect des règles, limitant les ralentissements dus aux accidents ou aux contrôles policiers. Pour les autorités, il facilite la prévention routière en collectant des données sur les infractions récurrentes, permettant d'identifier les zones à risque et d'adapter les campagnes de sensibilisation. De plus, à long terme, une généralisation de cette technologie pourrait réduire les coûts sociaux liés aux accidents (soins médicaux, réparations, perte de productivité)."
+                            
+                            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                            halign:"center"
+                            font_style:'Label'
+                
+                
+                    
+                    
+                                           
+                                        
+                                        
+                                        
+                Image:
+                    source:"logo/7.png"
+                    size_hint:.5,1
+                    pos_hint: {'center_x': 0.48,'center_y': -4.5}
+                MDLabel:
+                    text: "Tous droits réservés 2025"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':-4.65}
+                    theme_text_color: "Custom"
+                    text_color: "blue"
+                    font_style:'Label'
+                    role:'medium'
+    
+        
+        
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: 1
+        pos_hint: {"center_x": .5, "center_y": 0.96}
+        
+        MDTopAppBarLeadingButtonContainer:
+            md_bg_color:255,0,0
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "arrow-left"
+                on_release:
+                    app.root.current="home"
+                    app.root.transition.direction ='right'
+                    #app.root.transition.duration=0
+                
+        MDTopAppBarTitle:
+            text: " M. REDA SAADALLAH"
+            font_style:'Title'
+            role:'medium'
+          
+            
+        MDTopAppBarTrailingButtonContainer:
+
+            
+            
+            
+            MDActionTopAppBarButton:
+                icon: "account-box-outline"
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "menu"
+                on_release:nav_drawer.set_state('open')
+                
+    
+            
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        MDScreen:
+            size_hint:1,1
+            Image:
+                source: 'logo/cover1.jpeg'  # Replace with your image path
+                allow_stretch: True
+                keep_ratio: False  # Set to False to cover the entire window
+            
+            Image:
+                source:"logo/8.png"
+                size_hint:.5,.5
+                pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            MDButton:
+                style: "elevated"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release:
+                    app.deconnecter()
+                    nav_drawer.set_state('close')
+                MDButtonIcon:
+                    icon: "logout"
+                MDButtonText:
+                    text: "Déconnecter"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .19}
+                MDButtonIcon:
+                    icon: "google"
+                MDButtonText:
+                    text: "Google"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .12}
+                MDButtonIcon:
+                    icon: "facebook"
+                MDButtonText:
+                    text: "Facebook"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .05}
+                MDButtonIcon:
+                    icon: "instagram"
+                MDButtonText:
+                    text: "Instagram"
+                    bold:True
+
+
+                    
+                    
+
+            
+

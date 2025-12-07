@@ -1,0 +1,254 @@
+<Contact>:
+    name:"contact"
+    md_bg_color: 255,255,255,1
+    Image:
+        source: 'logo/cover6.jpg'  # Replace with your image path
+        allow_stretch: True
+        keep_ratio: False  # Set to False to cover the entire window
+    ScrollView:
+        size:self.size
+        do_scroll_x:True
+        do_scroll_y:True
+        BoxLayout:
+            orientation:"vertical"
+            padding:(0,1035,0,-90)
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            Screen:
+                size_hint_y:None
+                height:300
+                width:400
+                Image:
+                    source:"logo/8.png"
+                    size_hint:0.5,.5
+                    pos_hint: {'center_x': 0.25,'center_y': 3.9}
+                MDBoxLayout:
+                    size_hint: 0.00000000001,.4
+                    radius:100
+                    md_bg_color:255,153/255,53/255,1
+                    pos_hint: {'center_x': 0.43,'center_y': 3.9}
+                    canvas.after:
+                        Color:
+                            rgba: 255, 153/255, 51/255, 1
+                        Line:
+                            width: 3
+                            ellipse: self.x, self.y, self.width, self.height
+                MDLabel:
+                    text: "L'IA sur la Route,\n Sécurité Optimisée."
+                    halign:'center'
+                    pos_hint:{'center_x':0.7,'center_y':3.9}
+                    bold:True  
+                    bold:True  
+                MDGridLayout:
+                    cols:1
+                    pos_hint:{'center_x':0.5,'center_y':2.9}
+                    size_hint:0.9,1.5
+                    #padding:[dp(25),dp(15),dp(25),dp(45)]
+                    spacing:dp(5)
+                  
+                    MDBoxLayout:
+                        
+                        md_bg_color:0,153/255,255
+                        size_hint:1,1
+                        radius:1000,0                   
+                        padding:0,20,0,5
+                        Image:
+                            source:"logo/location.png"
+                            size_hint:0.5,0.7
+                            halign:'center'
+                            pos_hint:{'center_x':0.5,'center_y':0.53}
+
+                        MDLabel:
+                            theme_text_color:'Custom'
+                            text_color:1,1,1,1
+                            text:"Notre entreprise:\ncasablanca Rue 35,N45"
+                            pos_hint:{'center_x':0.2,'center_y':0.5}
+                            
+                            bold:True   
+                    
+                    MDBoxLayout:
+                        md_bg_color:255,153/255,0
+                        size_hint:1,1
+                        radius:1000,0
+                        padding:0,30,0,20
+                        
+                        Image:
+                            source:"logo\phone.png"
+                            size_hint:0.5,1.1
+                            halign:'center'
+                            pos_hint:{'center_x':0.5,'center_y':0.48}
+                        MDLabel:
+                            text:"Téléphone:\n0533456799 0523453200"
+                            theme_text_color:'Custom'
+                            text_color:1,1,1,1
+                    
+                            bold:True
+                 
+                    MDBoxLayout:
+                       
+                        md_bg_color:0,204/255,0
+                        size_hint:1,1
+                        radius:1000,0
+                        padding:0,30,0,10
+                        Image:
+                            source:"logo/fax.png"
+                            size_hint:0.5,1
+                            halign:'center'
+                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                        MDLabel:
+                            theme_text_color:'Custom'
+                            text_color:1,1,1,1
+                            text:"FAX:\n1-234-567-8900"
+                            
+                            bold:True
+                    
+                    MDBoxLayout:
+                        md_bg_color:255/255,51/255,255
+                        size_hint:1,1
+                        radius:1000,0
+                        
+                        padding:0,30,0,10
+                        Image:
+                            source:"logo/gmail.png"
+                            size_hint:0.5,1
+                            halign:'center'
+                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                        MDLabel:
+                            theme_text_color:'Custom'
+                            text_color:1,1,1,1
+                            text:"E-MAIL:\n[u]hello@gmail.com[/u]"
+                            
+                            bold:True      
+                            markup:True 
+                MDLabel:
+                    text: "Laissez-nous un commantaire"
+                    halign:'center'
+                    pos_hint:{'center_x':0.33,'center_y':1.5}
+                    theme_text_color: "Custom"
+                    text_color: "green"
+                    font_style:'Title'
+                    role:"medium"
+                    bold:True
+                Image:
+                    source:"logo/7.png"
+                    size_hint:1,4
+                    pos_hint: {'center_x': 0.48,'center_y': 1.1}
+                    opacity:0.5
+                MDTextField:
+                    mode: "outlined"
+                    max_height: "120dp"
+                    multiline: True
+                    pos_hint: {'center_x': 0.48,'center_y': 1}
+                    size_hint_x:0.8
+                
+
+                        
+               
+                Image:
+                    source:"logo/7.png"
+                    size_hint:.5,1
+                    pos_hint: {'center_x': 0.48,'center_y': 0.5}
+                MDLabel:
+                    text: "Tous droits réservés 2025"
+                    halign:'center'
+                    pos_hint:{'center_x':0.5,'center_y':0.35}
+                    theme_text_color: "Custom"
+                    text_color: "blue"
+                    font_style:'Label'
+                    role:'medium'
+    
+                Image:
+                    source:"logo/comment.png"
+                    size_hint:.5,0.6
+                    pos_hint: {'center_x': 0.48,'center_y': 1.8}
+
+    MDTopAppBar:
+        type: "small"
+        size_hint_x: 1
+        pos_hint: {"center_x": .5, "center_y": 0.96}
+        
+        MDTopAppBarLeadingButtonContainer:
+            md_bg_color:255,0,0
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "arrow-left"
+                on_release:
+                    app.root.current="home"
+                    app.root.transition.direction ='right'
+                    #app.root.transition.duration=0
+                
+                
+        MDTopAppBarTitle:
+            text: " M. REDA SAADALLAH"
+            font_style:'Title'
+            role:'medium'
+          
+            
+        MDTopAppBarTrailingButtonContainer:
+
+            
+            
+            
+            MDActionTopAppBarButton:
+                icon: "account-box-outline"
+            MDActionTopAppBarButton:
+                style:'filled'
+                icon: "menu"
+                on_release:nav_drawer.set_state('open')
+                
+                
+    MDNavigationDrawer:
+        id: nav_drawer
+        MDScreen:
+            size_hint:1,1
+            Image:
+                source: 'logo/cover1.jpeg'  # Replace with your image path
+                allow_stretch: True
+                keep_ratio: False  # Set to False to cover the entire window
+            
+            Image:
+                source:"logo/8.png"
+                size_hint:.5,.5
+                pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            MDButton:
+                style: "elevated"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release:
+                    app.deconnecter()
+                    nav_drawer.set_state('close')
+                MDButtonIcon:
+                    icon: "logout"
+                MDButtonText:
+                    text: "Déconnecter"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .19}
+                MDButtonIcon:
+                    icon: "google"
+                MDButtonText:
+                    text: "Google"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .12}
+                MDButtonIcon:
+                    icon: "facebook"
+                MDButtonText:
+                    text: "Facebook"
+                    bold:True
+            MDButton:
+                style: "text"
+                pos_hint: {"center_x": .5, "center_y": .05}
+                MDButtonIcon:
+                    icon: "instagram"
+                MDButtonText:
+                    text: "Instagram"
+                    bold:True
+
+                    
+                    
+
+            
+
